@@ -4,7 +4,7 @@
 
 import java.util.ArrayList;
 
-abstract class Survivor extends Character
+public abstract class Survivor extends Character
 {
 
     public Survivor(int startingHealth, int damageValue)
