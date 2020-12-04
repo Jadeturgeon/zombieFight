@@ -2,6 +2,8 @@
 //CSC 422
 //zombie war application
 
+import java.util.ArrayList;
+
 abstract class Survivor extends Character
 {
 
