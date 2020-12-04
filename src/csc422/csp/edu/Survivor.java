@@ -1,21 +1,44 @@
-package csc422.csp.edu;
+//12/4/2020
+//CSC 422
+//zombie war application
 
-import java.util.ArrayList;
+abstract class Survivor extends Character
+{
 
-public class Survivor extends Character{
-
-    @Override
-    public void acquireTargets(ArrayList<Character> targets) {
-
+    public Survivor(int startingHealth, int damageValue)
+    {
+        super(startingHealth, damageValue);
     }
 
-    public static ArrayList<Survivor> createRandomSurvivors(){
+    public static ArrayList<Character> createRandomSurvivors() throws Exception
+    {
+        ArrayList<Character> list = new ArrayList<>();
 
-        // Variable for Survivor list
-        ArrayList<Survivor> survivors = new ArrayList<>();
+        //(min + (int) (Math.random() * ((max - min) + 1)))
+        int number = (int) (Math.random() * 15);
+        number += 6;
 
-        // Code here
-        return survivors;
+        while (number >= 0)
+        {
+            //create a random zombie
+            int type = (int) (Math.random() * 3) + 1;
 
+            switch (type)
+            {
+                case 1:
+                    list.add(new Soldier(100, 10));
+                    break;
+                case 2:
+                    list.add(new Teacher(50, 5));
+                    break;
+                case 3:
+                    list.add(new Child(20, 2));
+                    break;
+                default:
+                    throw new Exception("not implemented");
+            }
+            number--;
+        }
+        return list;
     }
 }
