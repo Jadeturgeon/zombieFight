@@ -1,30 +1,72 @@
 package csc422.csp.edu;
 
 import java.util.ArrayList;
+import java.util.Set;
 
-public abstract class Character {
+//12/4/2020 
+//CSC 422 
 
-    private int currentHealth;
+//zombie war application
+public abstract class Character
+{
+    //properties
+    protected String type;
     private int attackDamage;
     private boolean isAlive;
+    private int currentHealth;
 
-    public int getCurrentHealth() {
+    //default constructor used for subtypes
+    //though this class cannot instantiate
+    //should be the only one needed for all
+    public Character(int startingHealth, int damageValue)
+    {
+        currentHealth = startingHealth;
+        attackDamage = damageValue;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    //methods
+    public int getCurrentHealth()
+    {
         return currentHealth;
     }
 
-    public int getAttackDamage() {
+    public void setCurrentHealth(int newHealth)
+    {
+        this.currentHealth = newHealth;
+    }
+
+    public int getDamage()
+    {
         return attackDamage;
     }
 
-    public boolean isAlive() {
-        return isAlive;
+    public void setDamage(int damage)
+    {
+        this.attackDamage = damage;
     }
 
-    public void inflictDamage(Character target){
-        // Code here
+    public boolean getIsAlive()
+    {
+        return currentHealth > 0;
     }
 
-    // Abstract Method
-    public abstract void acquireTargets(ArrayList<Character> targets);
 
+    @Override
+    public String toString()
+    {
+        return getType();
+    }
+
+    public void inflictDamage(Character target)
+    {
+        int damage = this.getDamage();
+        int targetHealth = target.getCurrentHealth();
+        target.setCurrentHealth(targetHealth - damage);
+    }
 }
+
