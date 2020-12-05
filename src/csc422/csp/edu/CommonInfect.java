@@ -4,11 +4,11 @@ package csc422.csp.edu;
 //CSC 422 
 //zombie war application
 
-public class Child extends Survivor
+public class CommonInfect extends Zombie
 {
-    public Child(int startingHealth, int damageValue)
+    public CommonInfect(int startingHealth, int damageValue)
     {
         super(startingHealth, damageValue);
-        type = "child";
+        type = "common infect";
     }
 }

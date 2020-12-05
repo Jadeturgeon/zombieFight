@@ -1,7 +1,14 @@
 package csc422.csp.edu;
 
-public class Teacher extends Survivor {
+//12/4/2020 
+//CSC 422 
+//zombie war application
 
-    // Code here
-
+public class Teacher extends Survivor
+{
+    public Teacher(int startingHealth, int damageValue)
+    {
+        super(startingHealth, damageValue);
+        type = "teacher";
+    }
 }

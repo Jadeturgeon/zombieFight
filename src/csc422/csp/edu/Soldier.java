@@ -1,7 +1,14 @@
 package csc422.csp.edu;
 
-public class Soldier {
+//12/4/2020 
+//CSC 422 
+//zombie war application
 
-    // Code here
-
+public class Soldier extends Survivor
+{
+    public Soldier(int startingHealth, int damageValue)
+    {
+        super(startingHealth, damageValue);
+        type = "soldier";
+    }
 }
