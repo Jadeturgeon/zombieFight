@@ -48,6 +48,7 @@ public class Simulation
                 }
             }
         }
+
         //test at the end of the attacking side turn - check if all defenders are dead            
         for (Character defender : team2)
         {
@@ -98,5 +99,4 @@ public class Simulation
              System.out.println("It seems none have made it.");
          }
     }
-
 }
