@@ -1,5 +1,6 @@
+package csc422.csp.edu;
 import java.util.ArrayList;
- 
+
 //12/4/2020 
 //CSC 422 
 //zombie war application
